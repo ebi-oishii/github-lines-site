@@ -1,94 +1,97 @@
 ---
 layout: default
-title: プライバシーポリシー
-description: Chrome 拡張「GitHub Lines」のプライバシーポリシーです。
+lang: en
+title: Privacy Policy
+description: The privacy policy for the Chrome extension GitHub Lines.
 permalink: /privacy/
+alt: /ja/privacy/
+alt_label: 日本語
 ---
 
-# プライバシーポリシー
+# Privacy Policy
 
-Chrome 拡張機能「GitHub Lines」（以下「本拡張」）の提供者（Chrome ウェブストアに開発者として表示される者。以下「提供者」）は、本拡張における利用者情報を次のとおり取り扱います。
+This is how the provider of the Chrome extension "GitHub Lines" (the extension) — the party shown as its developer on the Chrome Web Store — treats information about the people who use it.
 
-**最終更新日: 2026年9月19日**
+**Last updated: 19 September 2026**
 
 <div class="notice">
-提供者は本拡張の利用者から情報を収集しません。提供者のサーバーは存在せず、本拡張が通信する相手は GitHub（github.com / api.github.com）だけです。
+The provider collects nothing from the people who use this extension. There is no server behind it: the only party it communicates with is GitHub (github.com and api.github.com).
 </div>
 
-## 1. 収集しない情報
+## 1. What is not collected
 
-提供者は、本拡張を通じて利用者に関するいかなる情報も収集しません。具体的には、次のいずれも行いません。
+The provider collects no information whatsoever about you through this extension. In particular, none of the following happens:
 
-- 利用者アカウントの作成、ログイン、メールアドレスの取得
-- 利用状況の解析、クラッシュレポート、広告識別子の取得
-- 広告の配信
-- 閲覧したリポジトリ名、ファイル名、行数その他の内容の提供者への送信
+- Creating an account, signing in, or obtaining an email address
+- Analytics, crash reporting, or advertising identifiers
+- Serving advertisements
+- Sending the provider the names of repositories or files you looked at, their line counts, or their contents
 
-本拡張には、提供者が管理するサーバーへ送信するコードが含まれていません。解析・広告その他のサードパーティ SDK も組み込んでいません。
+The extension contains no code that transmits anything to a server run by the provider. No analytics, advertising or other third-party SDK is embedded in it.
 
-## 2. 端末内に保存される情報
+## 2. What is stored on your device
 
-次の情報が、利用者のブラウザ内にのみ保存されます。
+The following is held inside your browser, and nowhere else.
 
-| 保存場所 | 内容 |
+| Where | What |
 | --- | --- |
-| 拡張機能のストレージ（`chrome.storage.local`） | 設定（しきい値、表示の有無、取得モード、取得上限、同時取得数、除外パターン、表示言語）と、利用者が登録したアクセストークン |
-| 拡張機能のデータベース（IndexedDB） | 取得結果のキャッシュ（ファイルの行数、ツリーの一覧、`.gitattributes` の内容） |
+| Extension storage (`chrome.storage.local`) | Your settings (colour thresholds, what is shown, the counting mode, fetch limits, concurrency, exclusion patterns, display language) and any access tokens you registered |
+| Extension database (IndexedDB) | The cache of what has been fetched (line counts per file, directory listings, and the contents of `.gitattributes`) |
 
-いずれもブラウザのプロファイル内に置かれ、提供者はアクセスできません。
+All of it lives in your browser profile. The provider cannot reach it.
 
-## 3. アクセストークンの取り扱い
+## 3. Access tokens
 
-プライベートリポジトリを表示する場合、または 1 時間あたりの API 上限を引き上げる場合に、利用者が GitHub で発行したアクセストークンを設定画面に登録できます。
+To display private repositories, or to raise the hourly API limit, you may register an access token that you issued yourself on GitHub.
 
-- トークンは上記の拡張機能のストレージに保存されます
-- トークンは、GitHub API（`api.github.com`）へのリクエストの認証ヘッダーにのみ使用されます。送信先は GitHub だけです
-- 提供者はトークンを受け取りません。設定画面で削除でき、本拡張を削除すれば同時に削除されます
+- The token is stored in the extension storage described above
+- It is used only in the authorization header of requests to the GitHub API (`api.github.com`). GitHub is the only place it is sent
+- The provider never receives it. You can delete it from the options page, and removing the extension deletes it with them
 
-トークンの登録は任意です。登録しなくても、パブリックリポジトリでは未認証の上限（GitHub の定める 1 時間あたり 60 リクエスト）の範囲で動作します。
+Registering a token is optional. Without one the extension still works on public repositories, within GitHub's unauthenticated limit of 60 requests an hour.
 
-## 4. 通信
+## 4. Communication
 
-本拡張が行う通信は次の 2 つだけです。
+The extension communicates in exactly two ways.
 
-- **GitHub のページ上での動作**: `github.com` のファイル一覧ページに表示を追加します
-- **GitHub API へのリクエスト**: 表示中のリポジトリのツリー、ファイルの内容（行数を数えるため）、残りの API 数を `api.github.com` から取得します
+- **On GitHub's pages**: it adds its display to the file list on `github.com`
+- **To the GitHub API**: it fetches the tree of the repository you are viewing, file contents (in order to count their lines), and how much of the API budget is left, from `api.github.com`
 
-取得した内容は、行数を数えて表示するためにのみ使用し、端末内のキャッシュに保存します。GitHub 以外への送信はありません。
+What comes back is used only to count lines and display them, and is cached on your device. Nothing is sent anywhere other than GitHub.
 
-## 5. 権限
+## 5. Permissions
 
-Chrome ウェブストアに表示される権限は、次の目的で要求しています。
+The permissions shown on the Chrome Web Store are requested for these purposes.
 
-- **ストレージ**: 設定・トークン・キャッシュを端末内に保存するため
-- **github.com へのアクセス**: ファイル一覧に表示を追加するため
-- **api.github.com へのアクセス**: 行数の算出に必要なデータを取得するため
+- **Storage**: to keep your settings, tokens and cache on your own device
+- **Access to github.com**: to add the display to the file list
+- **Access to api.github.com**: to fetch the data the line counts are calculated from
 
-本拡張は、閲覧履歴、位置情報、カメラ、マイク、連絡先のいずれへのアクセスも要求しません。
+The extension requests access to none of the following: browsing history, location, camera, microphone, contacts.
 
-## 6. 第三者への提供
+## 6. Disclosure to third parties
 
-提供者が収集する情報がないため、第三者へ提供する情報もありません。
+Since the provider collects no information, there is none to disclose to anyone.
 
-## 7. 削除
+## 7. Deletion
 
-- 設定画面の「キャッシュを削除」で、取得結果のキャッシュを削除できます
-- 設定画面でトークンを削除できます
-- 本拡張を Chrome から削除すると、設定・トークン・キャッシュはすべて削除されます
+- "Clear the cache" on the options page deletes everything that has been fetched
+- Tokens can be deleted on the options page
+- Removing the extension from Chrome deletes the settings, the tokens and the cache together
 
-## 8. 子どもの利用
+## 8. Children
 
-本拡張は特定の年齢層を対象とするものではありません。情報を収集しないため、子どもから情報を取得することもありません。
+This extension is not directed at any particular age group. Because it collects no information, it does not collect information from children either.
 
-## 9. 改定
+## 9. Changes
 
-重要な変更を行う場合は、本サイトで告知します。改定後のポリシーは、表示した効力発生日から適用します。
+Any material change will be announced on this site. A revised policy applies from the effective date shown on it.
 
-## 10. 提供者・お問い合わせ
+## 10. The provider, and getting in touch
 
-- メール: [ebi.apps.support@gmail.com](mailto:ebi.apps.support@gmail.com)
-- 不具合・要望: [GitHub の Issues](https://github.com/ebi-oishii/github-lines/issues)
+- Email: [ebi.apps.support@gmail.com](mailto:ebi.apps.support@gmail.com)
+- Bugs and requests: [GitHub Issues](https://github.com/ebi-oishii/github-lines/issues)
 
-提供者の氏名・住所等、法令上開示が必要な事項については、ご本人からの適法な請求に応じて遅滞なく回答します。
+Matters that must be disclosed by law, such as the provider's name and address, will be answered without delay upon a lawful request from the person concerned.
 
-**制定日: 2026年9月19日**
+**Effective from: 19 September 2026**

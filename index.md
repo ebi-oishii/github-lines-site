@@ -1,29 +1,32 @@
 ---
 layout: default
-title: サポート
-description: Chrome 拡張「GitHub Lines」のサポート・法務情報ページ。
+lang: en
+title: Support
+description: Support and legal information for the Chrome extension GitHub Lines.
 permalink: /
+alt: /ja/
+alt_label: 日本語
 ---
 
 # GitHub Lines
 
-このサイトでは、Chrome 拡張機能「GitHub Lines」のプライバシーポリシーとサポート情報を掲載しています。
+This site carries the privacy policy and support information for the Chrome extension GitHub Lines.
 
 <div class="notice">
-GitHub のファイル一覧に、そのディレクトリの中で各項目が行数の何割を占めるかをバーで表示する拡張です。無料で、広告もアプリ内課金もありません。提供者のサーバーは無く、通信する相手は GitHub だけです。
+It puts a bar on GitHub's file list showing each entry's share of the lines in that directory. Free, with no advertising and no in-app purchases. There is no server behind it: the only party it communicates with is GitHub.
 </div>
 
-## ページ一覧
+## Pages
 
-- [プライバシーポリシー]({{ '/privacy/' | relative_url }})
+- [Privacy policy]({{ '/privacy/' | relative_url }})
 
-## 使い方・ソースコード
+## Using it, and the source
 
-導入手順と設定の説明は、リポジトリの README にあります。
+The setup steps and every setting are described in the repository's README.
 
-- [ebi-oishii/github-lines](https://github.com/ebi-oishii/github-lines)（[日本語の README](https://github.com/ebi-oishii/github-lines/blob/main/README.ja.md)）
+- [ebi-oishii/github-lines](https://github.com/ebi-oishii/github-lines) ([README in Japanese](https://github.com/ebi-oishii/github-lines/blob/main/README.ja.md))
 
-## お問い合わせ
+## Getting in touch
 
-- 不具合・要望: [GitHub の Issues](https://github.com/ebi-oishii/github-lines/issues)
-- メール: [ebi.apps.support@gmail.com](mailto:ebi.apps.support@gmail.com)
+- Bugs and requests: [GitHub Issues](https://github.com/ebi-oishii/github-lines/issues)
+- Email: [ebi.apps.support@gmail.com](mailto:ebi.apps.support@gmail.com)
